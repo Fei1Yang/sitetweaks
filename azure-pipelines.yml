@@ -1,0 +1,24 @@
+trigger:
+  branches:
+    include:
+    - '*' 
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: CmdLine@2
+  displayName: 'Switch to triggered branch'
+  inputs:
+    script: |
+      set -ex
+      git checkout "$BUILD_SOURCEBRANCHNAME"
+    workingDirectory: '$(Build.SourcesDirectory)'
+- task: CmdLine@2
+  displayName: 'Push updates to remote git repository'
+  inputs:
+    script: |
+      set -ex
+      git remote add mirror https://$(REMOTE_ACCESS_TOKEN)@$(REMOTE_HOST)/$(REMOTE_REPO).git
+      git push mirror --force --tags
+    workingDirectory: '$(Build.SourcesDirectory)'

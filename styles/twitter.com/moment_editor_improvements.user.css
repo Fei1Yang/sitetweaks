@@ -1,0 +1,59 @@
+/* ==UserStyle==
+@name         Twitter Moment Editor Improvements
+@namespace    https://dev.azure.com/fei1yang/sitetweaks
+@author       Fei1Yang
+@description  Improvements for Twitter's poorly designed Moment editor.
+@license      GPL-3.0-only
+@version      1.0.0
+==/UserStyle== */
+@-moz-document url-prefix("https://twitter.com/i/moments/edit/") {
+  .MomentMakerPage-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .MomentCapsuleEditableMeta {
+    margin-bottom: unset;
+  }
+
+  .MomentMakerCapsuleCover {
+    order: 0;
+    padding-bottom: 32px;
+    padding-top: 32px;
+  }
+
+  .MomentMakerCapsuleCover-media.has-media {
+    border-bottom: unset;
+    padding-bottom: 32px;
+  }
+
+  .MomentMakerPage-existingTweets {
+    order: 2;
+    margin: 32px auto;
+  }
+
+  .MomentMakerRecommendations {
+    order: 1;
+    padding: unset;
+  }
+
+  .MomentMakerRecommendations-title {
+    padding: 32px 0;
+  }
+
+  .MomentMakerRecommendedCategories {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin: 32px auto;
+  }
+
+  .MomentMakerRecommendations-module {
+    margin-bottom: 32px;
+  }
+
+  .MomentCapsuleItem {
+    margin: 0 32px 32px 32px;
+  }
+}
+
