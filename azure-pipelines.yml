@@ -20,5 +20,5 @@ steps:
     script: |
       set -ex
       git remote add mirror https://$(REMOTE_ACCESS_TOKEN)@$(REMOTE_HOST)/$(REMOTE_REPO).git
-      git push mirror --force --tags
+      git push mirror "$BUILD_SOURCEBRANCHNAME" --force --tags
     workingDirectory: '$(Build.SourcesDirectory)'
